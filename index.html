@@ -766,6 +766,12 @@
 
             doc.addEventListener('click', openHere, true);
             doc.addEventListener('auxclick', openHere, true);
+            doc.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    event.preventDefault();
+                    closeViewer();
+                }
+            });
             doc.addEventListener('submit', (event) => {
                 const form = event.target;
                 const target = (form.target || '').toLowerCase();
