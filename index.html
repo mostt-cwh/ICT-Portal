@@ -61,6 +61,15 @@
         }
         .last-open[hidden] { display: none !important; }
         .last-open:hover, .last-open:focus-visible { background: rgba(0, 243, 255, 0.12); }
+        .admin-link {
+            display: inline-block;
+            margin-top: 0.85rem;
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+        .admin-link:hover, .admin-link:focus-visible { color: var(--neon-cyan); }
 
         .filter-container {
             display: flex;
@@ -304,6 +313,7 @@
             <h1>ICT Learning Portal</h1>
             <p>選擇課題後會在這一頁裡面開啟，不會開新分頁。畫面會標明目前是哪一個分類的哪一個連結。</p>
             <button type="button" id="lastOpen" class="last-open" hidden></button>
+            <a class="admin-link" href="admin.php">管理課題</a>
         </header>
 
         <nav class="filter-container" aria-label="課題分類">
@@ -353,7 +363,7 @@
         </div>
     </section>
 
-    <!-- 課題資料。新增卡片只改這份 JSON：title、category、icon、link、desc。id 可省略，省略時用 link。 -->
+    <!-- 課題資料。請用 admin.php 新增或修改。欄位：title、category、icon、link、desc。id 可省略，省略時用 link。 -->
     <script id="admin-card-data" type="application/json">[
         {"title":"Information Processing","category":"A","icon":"fa-solid fa-magnifying-glass-chart","link":"information_processing.html","desc":"Ch.1\nInformation Processing"},
         {"title":"Data Validation & Verification","category":"A","icon":"fa-solid fa-magnifying-glass-chart","link":"dataV.html","desc":"Ch.2\nData Control"},
